@@ -1,0 +1,16 @@
+{
+    "name": "chorozian/reviews",
+    "description": "Custom WP Plugin to render user ratings",
+    "autoload": {
+        "psr-4": {
+            "CRZN_REVIEWS\\": "includes/src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lefteris Saroukos",
+            "email": "info@lsaroukos.gr"
+        }
+    ],
+    "require":{}
+}
