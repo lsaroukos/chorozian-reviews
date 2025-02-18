@@ -17,13 +17,13 @@ const moduleRules = [
             }
         },
     },
-    {
+  /*  {
         test: /\.css$/,     //select all css files
         use: [
             MiniCSSExtractPlugin.loader,   // Extracts CSS into a separate file
             'css-loader',    // Translates CSS into CommonJS modules
         ],
-    },
+    },*/
     {
         test: /\.scss$/,    //select all scss files
         use: [
@@ -80,7 +80,7 @@ module.exports = (env, argv) => {
     const config = {
         mode: buildMode,
         entry: {    //add as many entry points as necessary here
-            'admin': resolve(assetsSrcm,'admin.js'),
+            'admin': resolve(assetsSrc,'admin.js'),
             'index': resolve(assetsSrc,'index.js'),
         },
         output: {

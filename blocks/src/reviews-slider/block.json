@@ -1,0 +1,13 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "title": "Reviews Slider",
+    "name": "chorozian/reviews-slider",
+    "version":"1.0.0",
+    "category": "chorozian",
+    "script": "file:index.js",
+    "style": "file:index.css",
+    "icon":"editor-insertmore",
+    "attributes":{},
+    "supports": {}
+  }

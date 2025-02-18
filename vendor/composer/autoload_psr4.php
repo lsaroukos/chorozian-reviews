@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CRZN_COMMENTS\\' => array($baseDir . '/includes/src'),
+    'CRZN_REVIEWS\\' => array($baseDir . '/includes'),
 );

@@ -18,15 +18,20 @@ const blocksDist = resolve(ROOT_DIR, 'blocks/dist');    //output directory
 
 // For each block name (as foudn in the blocks/src/ folder)
 blockList.forEach(async (block) => {
+    
     const current_output_dir = resolve(blocksDist, block );
+
     const commands = {
         production: `node ./node_modules/.bin/webpack --config ./.build-scripts/webpack.block.config.js --env OUTPUT_DIR=${current_output_dir} NODE_ENV=production`,
-        development: `node ${ROOT_DIR}/node_modules/.bin/webpack --config ${ROOT_DIR}/.build-scripts/webpack.block.config.js --env OUTPUT_DIR=${current_output_dir}`,
+        development: `node ${ROOT_DIR}/node_modules/.bin/webpack --config ${ROOT_DIR}/.build-scripts/webpack.block.config.js --env OUTPUT_DIR=${block}`,
     };
 
     exec( commands.development , {
         timeout: 0, //No execution time limit.
         cwd: resolve(__dirname, '../'), //Runs the command one level above the script’s directory.
+        env: {
+            WP_SRC_DIRECTORY: resolve(ROOT_DIR,`blocks/src/${block}`)
+        }
     }, (error, stdout, stderr) => {
         if (error) {
             console.error(`exec error: ${error}`);  //print message on console

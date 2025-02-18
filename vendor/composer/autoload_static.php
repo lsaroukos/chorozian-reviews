@@ -9,14 +9,14 @@ class ComposerStaticInit057220906d24c49bf49ec2790bc6a64c
     public static $prefixLengthsPsr4 = array (
         'C' => 
         array (
-            'CRZN_COMMENTS\\' => 14,
+            'CRZN_REVIEWS\\' => 13,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'CRZN_COMMENTS\\' => 
+        'CRZN_REVIEWS\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/includes/src',
+            0 => __DIR__ . '/../..' . '/includes',
         ),
     );
 

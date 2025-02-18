@@ -1,19 +1,19 @@
 <?php return array(
     'root' => array(
-        'name' => 'chorozian/comments',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'name' => 'chorozian/reviews',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'e8ecd5b5ac3487d619450b2c825ea0da64293864',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        'chorozian/comments' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+        'chorozian/reviews' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'e8ecd5b5ac3487d619450b2c825ea0da64293864',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

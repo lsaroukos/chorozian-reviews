@@ -3,7 +3,7 @@
     "description": "Custom WP Plugin to render user ratings",
     "autoload": {
         "psr-4": {
-            "CRZN_REVIEWS\\": "includes/src"
+            "CRZN_REVIEWS\\": "includes"
         }
     },
     "authors": [
