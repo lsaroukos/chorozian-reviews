@@ -8,6 +8,11 @@ const WPConfig = {
     ...defaultConfig,
 }
 
+//remove the rtl and MiniCssExtraPlugin
+const filtered_plugins = WPConfig.plugins.filter(plugin => {
+    return plugin.constructor.name !== 'RtlCssPlugin' && plugin.constructor.name !== 'MiniCssExtractPlugin';
+});
+
 
 //default export
 module.exports = (env, argv) => { //use env variables from current environment to set the output directory
@@ -21,7 +26,7 @@ module.exports = (env, argv) => { //use env variables from current environment t
             path: resolve( ROOT_DIR, 'blocks/dist/' + env.OUTPUT_DIR ),
         },
         plugins: [
-            ...WPConfig.plugins,
+            ...filtered_plugins,
             new MiniCssExtractPlugin({
                 filename: 'index.css',
             }),
