@@ -21,6 +21,7 @@ class Plugin{
     public function register_blocks(){
         return [
             Blocks\ReviewsSlider::class => new Blocks\ReviewsSlider(),
+            Blocks\ReviewsSliderItem::class => new Blocks\ReviewsSliderItem(),
         ];
     }
 

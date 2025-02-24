@@ -1,3 +1,49 @@
-#test{
-    color:red;
+.reviews-slider-block{
+	padding: 50px;
+
+	&, * {
+		box-sizing: border-box;
+	}
+	
+	h2 {
+		font-size: xx-large;
+		font-weight: normal;
+	}
+
+	.swiper{
+		padding-bottom: 50px;
+	}
+
+	.swiper-navigation{
+
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		display: flex;
+		font-size: xx-large;
+		font-weight: lighter;
+
+		.swiper-button-prev,
+		.swiper-button-next {
+
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			user-select: none;
+			position: relative;
+			bottom: 0;
+			padding: 0;
+			margin: 0;
+			display: inline-block;
+			color: black;
+	
+			&::after{
+				display: none; /* Hides default Swiper arrows */
+			}
+		}
+
+		.swiper-button-prev{
+			left: calc( -100% );
+		}
+
+	}
 }

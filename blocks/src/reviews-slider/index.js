@@ -1,35 +1,75 @@
 import "./index.scss"
 import metadata from './block.json';
-import { useBlockProps } from "@wordpress/block-editor";
+import { InspectorControls, useBlockProps } from "@wordpress/block-editor";
+import SliderLayout from "./lib/SliderLayout";
+import { useInnerBlocksProps, Inserter, InnerBlocks } from '@wordpress/block-editor';
+import { Button } from "@wordpress/components";
+import { useEffect, useState } from 'react';
+import { useDispatch } from '@wordpress/data';
+import SliderSettings from "./settings/SliderSettings";
 
-
-function EditComponent( {} ) {
-
-    const blockProps = useBlockProps();
-
-    return (
-        <div {...blockProps} >
-            <h1 id="test">Hello</h1>
-        </div>
-    )
-}
 
 wp.blocks.registerBlockType( metadata.name, {
-  ...metadata,
-  icon: {
-    src:
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-      <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0h8A1.5 1.5 0 0 1 11 1.5v2A1.5 1.5 0 0 1 9.5 5h-8A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-8z"/>
-      <path d="m7.823 2.823-.396-.396A.25.25 0 0 1 7.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
-    </svg>
-  },
-  edit: EditComponent,
+    ...metadata,
+    edit: EditComponent,
+    save: SaveComponent,
+})
 
-    save() {
+function EditComponent( props ) {
+    const blockProps = useBlockProps({ className: "reviews-slider-block"});
+
+    const [tick, setTick] = useState(0); // Ignore the current state value
+    
+    const innerBlocksProps = useInnerBlocksProps(
+        { className: 'reviews-slider' }, // Wrapper div
+        { allowedBlocks: ['chorozian/reviews-slider-item'], orientation: 'horizontal' }
+    );
+
+    /**
+     * define custom appender button
+     */
+    function SlideAppender( { rootClientId } ) {
         return (
-            <div>
-                <h1>Saved Review Slider</h1>
-            </div>
+            <Inserter
+                rootClientId={ rootClientId }
+                renderToggle={ ( { onToggle, disabled } ) => (
+                    <div className="button-appender" >
+                        <Button
+                            className="slide-appender-button is-primary"
+                            onClick={ ()=>{
+                                onToggle();
+                                setTick(tick => tick + 1); // Update the state to force a re-render
+                            } }
+                            label="Add a slide"
+                        >+ Add a slide</Button>
+                    </div>
+                ) }
+                isAppender
+            />
         );
     }
-})
+
+    useEffect(() => {
+        // This will force a re-render of SliderLayout when inner blocks change
+    }, [props.clientId]); // You can also add other dependencies if needed
+
+    const { selectBlock } = useDispatch( 'core/block-editor' );
+
+    return (
+        <div key={ `${props.clientId}__${tick}` } {...blockProps} onClick={(e)=>{ e.stopPropagation(); selectBlock( props.clientId );}}>
+            <InspectorControls>
+                <SliderSettings attributes={props.attributes} setAttributes={props.setAttributes} />
+            </InspectorControls>
+            <h2>{ props.attributes?.title || "Client Reviews" }</h2>  
+            <SliderLayout innerBlocksProps={innerBlocksProps}></SliderLayout>
+            { props.isSelected && 
+                <SlideAppender rootClientId={ props.clientId } />
+            }
+        </div>
+    );
+}
+
+
+function SaveComponent( ){
+    return null; //<InnerBlocks.Content />
+}

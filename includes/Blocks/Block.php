@@ -30,6 +30,9 @@ abstract class Block{
     public function __construct(){
 
        $this->register_block();  
+
+       //enqueue block specific scripts
+       \add_action('wp_enqueue_scripts', [$this,'enqueue_scripts']);
     }
 
     /**
@@ -63,12 +66,12 @@ abstract class Block{
      * If not defined it returns null, meanind it should try rendering from js
      */
     function render_callback($attributes, $content, $block){
-        
         //get html output
         ob_start();
         $this->render_html( $attributes, $content, $block );
         $html = ob_get_clean();
         
+        error_log($html);
         return empty($html) ? null : $html;
     }
 
@@ -81,5 +84,12 @@ abstract class Block{
      * @return mixed
      */
     abstract function render_html( $attributes, $content, $block );
+
+    /**
+     * 
+     */
+    public function enqueue_scripts(){
+
+    }
 }
 }

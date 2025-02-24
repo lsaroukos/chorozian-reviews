@@ -5,9 +5,12 @@
     "name": "chorozian/reviews-slider",
     "version":"1.0.0",
     "category": "chorozian",
-    "script": "file:index.js",
+    "editorScript": "file:index.js",
+    "script": "file:frontend.js",
     "style": "file:index.css",
-    "icon":"editor-insertmore",
-    "attributes":{},
+    "icon":"slides",
+    "attributes":{
+      "title" : {"type":"string", "default":""}
+    },
     "supports": {}
   }

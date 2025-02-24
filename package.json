@@ -7,16 +7,18 @@
 	"main": "build/index.js",
 	"scripts": {
 		"build:blocks": "node ./.build-scripts/blocks.js",
-		"build:single": "cross-env WP_SRC_DIRECTORY=./blocks/src/reviews-slider webpack --config ./.build-scripts/webpack.block.config.js --env OUTPUT_DIR=reviews-slider",
+		"build:single": "cross-env WP_SRC_DIRECTORY=./blocks/src/reviews-slider webpack --config ./.build-scripts/webpack.block.config.js --env OUTPUT_DIR=reviews-slider NODE_ENV=development",
 		"build:assets": "webpack --config ./.build-scripts/webpack.assets.config.js",
 		"wp-env": "wp-env"
 	},
 	"dependencies": {
 		"@wordpress/blocks": "^14.7.0",
+		"@wordpress/components": "^29.4.0",
 		"@wordpress/editor": "^14.18.0",
 		"@wordpress/element": "^6.18.0",
 		"@wordpress/i18n": "^5.18.0",
 		"cross-env": "^7.0.3",
+		"swiper": "^11.2.4",
 		"webpack": "^5.98.0"
 	},
 	"devDependencies": {

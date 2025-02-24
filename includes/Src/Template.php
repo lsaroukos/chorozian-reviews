@@ -1,11 +1,11 @@
 <?php 
 
-namespace CRZN_REVIEW\Src;
+namespace CRZN_REVIEWS\Src;
 
 class Template{
     
     //directory of public folder that hosts template files
-    public $templates_dir = implode( DIRECTORY_SEPARATOR, [ROOT_DIR, 'templates' ] );
+    public $templates_dir;
 
     protected $file = null; //holds the full filename and path
 
@@ -16,8 +16,13 @@ class Template{
      * 
      */
     public function __construct( $fname='default' ){
+
+        //define templates directory path
+        $this->templates_dir = implode(DIRECTORY_SEPARATOR, [ ROOT_DIR , 'templates','' ]);
         
-        $filepath = $this->get_file_path($fname);
+        //get full file name
+        $filepath = $this->get_full_fname($fname);
+
         //check if file exists
         if( file_exists( $filepath ) ){
             $this->file = $filepath;
@@ -28,7 +33,7 @@ class Template{
      * @param $fname
      * 
      */
-    private function get_file_path( $fname ){
+    private function get_full_fname( $fname ){
         return $this->templates_dir . $fname . $this->suffix;
     }
 
@@ -36,16 +41,25 @@ class Template{
     /**
      * @return string the code contained in the file template
      */
-    public function get( ){
-        ob_start();
-        include $this->file;
-        return ob_get_clean();
+    public function get(array $options = [])
+    {
+        if($this->file){
+            extract ($options); //extract options from array
+            ob_start();
+                if( !empty($attributes) ){
+                    extract( $attributes );
+                }
+                include $this->file;
+            return ob_get_clean();
+        }
+
+        return '';
     }
 
     /**
      * prints the code contained in the file template
      */
-    public function render(){
-        echo $this->get();
+    public function render(array $options = []){
+        echo $this->get($options);
     }
 }

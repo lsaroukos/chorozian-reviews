@@ -1,0 +1,22 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "title": "Reviews Slider Item",
+    "name": "chorozian/reviews-slider-item",
+    "version":"1.0.0",
+    "category": "chorozian",
+    "script": "file:index.js",
+    "style": "file:index.css",
+    "parent": ["chorozian/reviews-slider"],
+    "icon":"slides",
+    "attributes": {
+      "img": {"type":"object", "default":{
+        "id": ""
+      }},
+      "clientName": {"type":"string", "default":"client name"},
+      "reviewText": {"type":"string", "default":"review tezt"},
+      "rating": {"type":"number", "default":0},
+      "link" : {"type":"string"}
+    },
+    "supports": {}
+  }

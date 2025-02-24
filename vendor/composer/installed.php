@@ -3,7 +3,7 @@
         'name' => 'chorozian/reviews',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'e8ecd5b5ac3487d619450b2c825ea0da64293864',
+        'reference' => '35b1c403788cd9c2d19bc1cdf1404c72aaf6781e',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'chorozian/reviews' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'e8ecd5b5ac3487d619450b2c825ea0da64293864',
+            'reference' => '35b1c403788cd9c2d19bc1cdf1404c72aaf6781e',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

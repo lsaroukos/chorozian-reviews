@@ -1,0 +1,22 @@
+.reviews-slider-item {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	& > *{
+		flex: 1;
+	}
+
+	.review-image {
+		padding-right: 5%;
+	}
+
+	.review-footer {
+		display: flex;
+
+		.review-link {
+			font-size: medium;
+			color: var(--text-color);
+		}
+	}
+}
