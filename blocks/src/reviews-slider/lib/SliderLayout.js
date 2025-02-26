@@ -1,8 +1,7 @@
 import React, { forwardRef, useRef, useImperativeHandle, useEffect, useState } from 'react';
 // Import Swiper react components
 import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import { getBlocks } from '@wordpress/blocks';
+import { Navigation, Autoplay } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';

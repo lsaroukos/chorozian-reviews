@@ -1,5 +1,4 @@
 .reviews-slider-block{
-	padding: 50px;
 
 	&, * {
 		box-sizing: border-box;
@@ -8,24 +7,30 @@
 	h2 {
 		font-size: xx-large;
 		font-weight: normal;
+		padding: 20px 0;
 	}
 
 	.swiper{
-		padding-bottom: 50px;
+		padding-bottom: 60px;
 	}
 
 	.swiper-navigation{
 
 		position: absolute;
-		bottom: 0;
-		left: 50%;
+		bottom: 16px;
+		left: 63%;
 		display: flex;
 		font-size: xx-large;
 		font-weight: lighter;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
 
 		.swiper-button-prev,
 		.swiper-button-next {
 
+			width: max-content;
 			-webkit-user-select: none;
 			-moz-user-select: none;
 			user-select: none;
@@ -33,12 +38,16 @@
 			bottom: 0;
 			padding: 0;
 			margin: 0;
-			display: inline-block;
 			color: black;
-	
+			line-height: 20px;
+			display: flex;
+			align-items: center;
+			height: 20px;
+
 			&::after{
 				display: none; /* Hides default Swiper arrows */
 			}
+			
 		}
 
 		.swiper-button-prev{

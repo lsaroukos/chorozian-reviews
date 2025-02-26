@@ -11,9 +11,9 @@
     <div class="swiper" >
         <div class="swiper-wrapper"><?php echo $content; ?></div>
 
-        <div className='swiper-navigation'>
-            <div class="swiper-button-prev">⟵</div>
-            <div class="swiper-button-next">⟶</div>
+        <div class='swiper-navigation'>
+            <div class="swiper-button-prev">⟵ &nbsp; <span>prev</span></div>
+            <div class="swiper-button-next"><span>next</span>&nbsp; ⟶</div>
         </div>
 
     </div>

@@ -5,6 +5,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import "./index.scss"
+import { Navigation, Autoplay } from 'swiper/modules';
+
 
 document.addEventListener('DOMContentLoaded',()=>{
     
@@ -20,6 +22,7 @@ document.addEventListener('DOMContentLoaded',()=>{
         const swiper = new Swiper(swiperElement, {
             loop: true,
             lazy : true,
+            modules: [Navigation, Autoplay],
 
             // Navigation arrows
             navigation: {
@@ -29,7 +32,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
             autoplay: {
                 delay: 3000, // Delay between transitions in milliseconds
-                disableOnInteraction: true, // Continue autoplay after user interactions
+                disableOnInteraction: false, // Continue autoplay after user interactions
             },
             
             //touch handle to allow block selection

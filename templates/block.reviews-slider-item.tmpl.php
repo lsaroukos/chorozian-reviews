@@ -19,8 +19,8 @@ use CRZN_REVIEWS\Src\Template;
 
 ?>
 <div class="swiper-slide reviews-slider-item" >
-    <?php if( !empty($attributes['img']->id) ): ?>
-        <img class="review-image" src="<?php echo $attributes['img']->large; ?>" />
+    <?php if( !empty($attributes['img']['id']) ): ?>
+        <img class="review-image" src="<?php echo $attributes['img']['large']; ?>" />
     <?php endif; ?>
     <div class="review-details">
         <h3 class="reviewer-name"><?php echo $attributes['clientName']; ?></h3>

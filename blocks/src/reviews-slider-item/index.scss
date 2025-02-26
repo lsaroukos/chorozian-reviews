@@ -9,14 +9,19 @@
 
 	.review-image {
 		padding-right: 5%;
+		width: 45%;
+		min-width: 280px;
 	}
 
-	.review-footer {
-		display: flex;
+	.review-details{
 
-		.review-link {
-			font-size: medium;
-			color: var(--text-color);
+		.review-footer {
+			display: flex;
+	
+			.review-link {
+				font-size: medium;
+				color: var(--text-color);
+			}
 		}
 	}
 }

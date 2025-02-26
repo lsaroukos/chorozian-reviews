@@ -71,7 +71,6 @@ abstract class Block{
         $this->render_html( $attributes, $content, $block );
         $html = ob_get_clean();
         
-        error_log($html);
         return empty($html) ? null : $html;
     }
 
