@@ -10,7 +10,7 @@
     "style": "file:index.css",
     "icon":"slides",
     "attributes":{
-      "title" : {"type":"string", "default":""}
+      "title" : {"type":"string", "default":"CLIENT REVIEWS"}
     },
     "supports": {}
   }

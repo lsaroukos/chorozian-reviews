@@ -9,30 +9,21 @@ var zipDirName = `${config.name}`;
 if ( exportWithVersion ) {
     zipDirName = `${config.name}-${config.version}`;
 }
-var zipFileName = `${zipDirName}.zip`;
+var zipFileName = `${zipDirName}-${config.version}.zip`;
 
 const zip = new zipArchive();
 
 let files = glob(
     [
-        'assets/**',
-        'images/**',
-        'parts/**',
-        'templates/**',
-        'patterns/**',
-        'styles/**',
+        'assets/dist/**',
         'blocks/dist/**',
         'includes/**',
+        'templates/**',
         'vendor/**',
-        'functions.php',
+        'chorozian-reviews.php',
         'composer.json',
-        'index.php',
-        'editor-style.css',
-        'style.css',
-        'theme.json',
-        'screenshot.png',
-        'readme.txt',
-        'readme.*',
+        'package.json',
+        'Readme.*',
     ],
     {
         caseSensitiveMatch: false,

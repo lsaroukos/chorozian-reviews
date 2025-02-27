@@ -71,5 +71,5 @@ function EditComponent( props ) {
 
 
 function SaveComponent( ){
-    return null; //<InnerBlocks.Content />
+    return <InnerBlocks.Content />
 }

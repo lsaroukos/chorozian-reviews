@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded',()=>{
             loop: true,
             lazy : true,
             modules: [Navigation, Autoplay],
+            autoHeight: true,
+
 
             // Navigation arrows
             navigation: {

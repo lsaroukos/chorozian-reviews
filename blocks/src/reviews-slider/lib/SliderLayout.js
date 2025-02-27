@@ -14,7 +14,6 @@ const SliderLayout = forwardRef( ({ innerBlocksProps, className}, ref)=>{
     const sliderRef = useRef(null);
     const prevButtonRef = useRef(null);
     const nextButtonRef = useRef(null);
-    const paginationRef = useRef(null);
 
 
     /**
@@ -28,6 +27,7 @@ const SliderLayout = forwardRef( ({ innerBlocksProps, className}, ref)=>{
             loop: true,
             modules: [Navigation, Autoplay],
             lazy : true,
+            autoHeight: true,
 
             // Navigation arrows
             navigation: {

@@ -9,8 +9,10 @@
 
 	.review-image {
 		padding-right: 5%;
-		width: 45%;
+		max-width: 45%;
 		min-width: 280px;
+		height: auto;
+		object-fit: contain;
 	}
 
 	.review-details{
