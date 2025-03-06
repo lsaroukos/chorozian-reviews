@@ -16,10 +16,19 @@
 		object-fit: contain;
 	}
 
-	.review-details{
+	.review-details {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	
+		.review-text {
+			height: 100%;
+			overflow: auto;
+		}
 
 		.review-footer {
 			display: flex;
+			padding: 10px 0;
 	
 			.review-link {
 				font-size: medium;
