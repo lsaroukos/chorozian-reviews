@@ -56,3 +56,9 @@
 
 	}
 }
+
+@media screen and (max-width: 500px){
+	.reviews-slider-block .swiper{
+		height: unset !important;
+	}
+}

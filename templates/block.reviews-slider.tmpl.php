@@ -4,13 +4,13 @@
  */
 
 
-$maxHeiht = $attributes['sliderHeight'] + 60;
+$maxHeight = $attributes['sliderHeight'] + 60;
 ?>
 
 <div class="reviews-slider-block frontend" id="<?php echo $block_id; ?>" >
     <h2><?php echo $attributes['title'] ?? 'Client Reviewws'; ?></h2>
 
-    <div class="swiper" style="height:<?php echo $maxHeiht.'px'; ?>;">
+    <div class="swiper" style="height:<?php echo $maxHeight.'px'; ?>;">
         <div class="swiper-wrapper" ><?php echo $content; ?></div>
 
         <div class='swiper-navigation'>

@@ -7,5 +7,8 @@
     - changes to build - packaging script 
     - fixed bug for saving innerblocks content
 
-## v1.0.2
+## v1.0.3
     - added max height range slider
+
+## v1.0.4
+    - fixed responsive issues

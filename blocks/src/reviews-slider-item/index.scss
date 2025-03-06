@@ -4,12 +4,12 @@
 	justify-content: space-between;
 
 	& > *{
-		flex: 1;
+		min-width: 100%;
 	}
 
 	.review-image {
 		padding-right: 5%;
-		max-width: 45%;
+		// max-width: 45%;
 		width: auto;
 		height: 100%;
 		-o-object-fit: contain;
@@ -37,3 +37,15 @@
 		}
 	}
 }
+
+@media screen and (min-width: 300px) {
+	.reviews-slider-item {
+
+		& > *{
+			flex: 1;
+			min-width: 200px;
+		}
+	
+	}
+		
+}	

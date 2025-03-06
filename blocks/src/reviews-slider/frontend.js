@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded',()=>{
     document.querySelectorAll('.reviews-slider-block.frontend').forEach( slider => {
 
         const swiperElement = slider.querySelector('.swiper'); // Ensure this is the correct class or selector for the swiper container
-        
+
+
         //TODO: if there is a need for different options on different sliders, data-attributes should be used on the php rendered component
 
         if( !swiperElement )
@@ -23,7 +24,13 @@ document.addEventListener('DOMContentLoaded',()=>{
             loop: true,
             lazy : true,
             modules: [Navigation, Autoplay],
-            autoHeight: false,
+            autoHeight: true,
+            
+            breakpoints: {
+                500: {
+                    autoHeight: false,
+                },
+            },
 
             // Navigation arrows
             navigation: {

@@ -40,8 +40,8 @@ function EditComponent( props ) {
                                 onToggle();
                                 setTick(tick => tick + 1); // Update the state to force a re-render
                             } }
-                            label="Add a slide"
-                        >+ Add a slide</Button>
+                            label="Add Review"
+                        >+ Add Review</Button>
                     </div>
                 ) }
                 isAppender

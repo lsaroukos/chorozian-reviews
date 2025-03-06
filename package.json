@@ -1,6 +1,6 @@
 {
 	"name": "chorozian-reviews",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "WP plugin that adds a custom gutenburg masonry block.",
 	"author": "Lefteris Saroukos",
 	"private": true,
