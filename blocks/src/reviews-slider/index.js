@@ -61,7 +61,7 @@ function EditComponent( props ) {
                 <SliderSettings attributes={props.attributes} setAttributes={props.setAttributes} />
             </InspectorControls>
             <h2>{ props.attributes?.title || "Client Reviews" }</h2>  
-            <SliderLayout innerBlocksProps={innerBlocksProps}></SliderLayout>
+            <SliderLayout innerBlocksProps={innerBlocksProps} atts={props.attributes}></SliderLayout>
             { props.isSelected && 
                 <SlideAppender rootClientId={ props.clientId } />
             }

@@ -10,9 +10,7 @@
     "parent": ["chorozian/reviews-slider"],
     "icon":"slides",
     "attributes": {
-      "img": {"type":"object", "default":{
-        "id": ""
-      }},
+      "img": {"type":"object", "default":{"id": ""}},
       "clientName": {"type":"string", "default":"client name"},
       "reviewText": {"type":"string", "default":"review tezt"},
       "rating": {"type":"number", "default":0},

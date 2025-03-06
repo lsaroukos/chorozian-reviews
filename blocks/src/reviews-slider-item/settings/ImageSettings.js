@@ -1,4 +1,4 @@
-import { Button, PanelBody, PanelRow } from "@wordpress/components"
+import { Button, PanelBody, PanelRow, RangeControl } from "@wordpress/components"
 import {  MediaUpload, MediaUploadCheck } from "@wordpress/block-editor"
 
 
@@ -53,7 +53,8 @@ export default function ImageSettings( {attributes, setAttributes} ) {
         </PanelRow>         
         <PanelRow>
           <Button className="button" onClick={()=>setAttributes({img:{id:""}})}>clear</Button>
-        </PanelRow>   
+        </PanelRow>
+
       </PanelBody>
   )
 }

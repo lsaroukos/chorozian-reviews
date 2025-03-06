@@ -10,8 +10,9 @@
 	.review-image {
 		padding-right: 5%;
 		max-width: 45%;
-		min-width: 280px;
-		height: auto;
+		width: auto;
+		height: 100%;
+		-o-object-fit: contain;
 		object-fit: contain;
 	}
 

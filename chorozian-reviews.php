@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Chorozian reviews
  * Description: Custom plugin to render client ratings
- * Version: 1.0.2
+ * Version: 1.0.3
  * Requires at least: 6.1
  * Requires PHP: 8.1
  * Author: Lefteris Saroukos
