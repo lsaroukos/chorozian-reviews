@@ -26,9 +26,6 @@ class ReviewsSlider extends Block{
          return $html;
     }
 
-    public function enqueue_scripts(){
-        
-    }
 
 }
 }

@@ -12,3 +12,6 @@
 
 ## v1.0.4
     - fixed responsive issues
+
+## v1.0.5
+    - Added slider autoplay settings

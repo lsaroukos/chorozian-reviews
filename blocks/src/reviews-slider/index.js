@@ -49,9 +49,19 @@ function EditComponent( props ) {
         );
     }
 
+    // This will force a re-render of SliderLayout when inner blocks change
     useEffect(() => {
-        // This will force a re-render of SliderLayout when inner blocks change
-    }, [props.clientId]); // You can also add other dependencies if needed
+
+        //get old state
+        const atts = {...props.attributes};
+        
+        //execute refresh asyncronously to prevent range input lags
+        setTimeout( ()=>{
+            if( props.attributes.autoplay === atts.autoplay && props.attributes.autoplaySpeed === atts.autoplaySpeed )
+                setTick(tick => tick + 1);
+        }, 400);
+        
+    }, [props.clientId, props.attributes.autoplay, props.attributes.autoplaySpeed ]); // You can also add other dependencies if needed
 
     const { selectBlock } = useDispatch( 'core/block-editor' );
 

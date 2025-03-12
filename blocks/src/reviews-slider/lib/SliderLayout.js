@@ -35,9 +35,9 @@ const SliderLayout = forwardRef( ({ innerBlocksProps, atts }, ref)=>{
             },
             height: atts.sliderHeight,
 
-            autoplay: {
-            delay: 3000, // Delay between transitions in milliseconds
-            disableOnInteraction: true, // Continue autoplay after user interactions
+            autoplay: atts.autoplay && {
+                delay: atts.autoplaySpeed || 3000, // Delay between transitions in milliseconds
+                disableOnInteraction: true, // Continue autoplay after user interactions
             },
             
             //touch handle to allow block selection

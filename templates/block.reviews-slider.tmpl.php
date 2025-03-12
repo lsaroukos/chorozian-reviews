@@ -5,12 +5,17 @@
 
 
 $maxHeight = $attributes['sliderHeight'] + 60;
-?>
+$autoplay = !empty($attributes['autoplay']) ? 'true' : 'false';  
+$autoplaySpeed = !empty($attributes['autoplaySpeed']) ? $attributes['autoplaySpeed'] : 3000;  // 3 seconds
 
+?>
 <div class="reviews-slider-block frontend" id="<?php echo $block_id; ?>" >
     <h2><?php echo $attributes['title'] ?? 'Client Reviewws'; ?></h2>
 
-    <div class="swiper" style="height:<?php echo $maxHeight.'px'; ?>;">
+    <div class="swiper" style="height:<?php echo $maxHeight.'px'; ?>;"
+        data-autoplay="<?php echo $autoplay; ?>"
+        data-autoplay-speed="<?php echo $autoplaySpeed; ?>"
+    >
         <div class="swiper-wrapper" ><?php echo $content; ?></div>
 
         <div class='swiper-navigation'>

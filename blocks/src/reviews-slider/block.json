@@ -5,13 +5,15 @@
     "name": "chorozian/reviews-slider",
     "version":"1.0.0",
     "category": "chorozian",
-    "editorScript": "file:index.js",
-    "script": "file:frontend.js",
+    "script": "file:index.js",
+    "viewScript": "file:frontend.js",
     "style": "file:index.css",
     "icon":"slides",
     "attributes":{
       "title" : {"type":"string", "default":"CLIENT REVIEWS"},
-      "sliderHeight" : { "type":"integer", "default":200}
+      "sliderHeight" : { "type":"integer", "default":200},
+      "autoplay" :  { "type": "boolean" },
+      "autoplaySpeed" : { "type":"integer", "default":3000}
     },
     "supports": {}
   }

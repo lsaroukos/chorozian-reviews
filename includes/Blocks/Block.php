@@ -43,7 +43,6 @@ abstract class Block{
         //get blocks directory name that corresponds to current (child) class name
         //e.g. MyBlock -> my-block
         $block_name = StringUtils::convertToKebabCase( StringUtils::get_base_class_name(static::class) );
-       
         //return full path
         return implode( DIRECTORY_SEPARATOR, [$this->blocks_root,'dist',$block_name] );
     }
@@ -87,8 +86,6 @@ abstract class Block{
     /**
      * 
      */
-    public function enqueue_scripts(){
-
-    }
+    public function enqueue_scripts(){}
 }
 }

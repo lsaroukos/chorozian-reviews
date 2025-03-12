@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded',()=>{
         const swiperElement = slider.querySelector('.swiper'); // Ensure this is the correct class or selector for the swiper container
 
 
-        //TODO: if there is a need for different options on different sliders, data-attributes should be used on the php rendered component
+        const autoplay = swiperElement.dataset.autoplay === 'true' ? true : false;
+        const autoplaySpeed = parseInt(swiperElement.dataset.autoplaySpeed) || 3000;
 
         if( !swiperElement )
             return;
@@ -38,8 +39,8 @@ document.addEventListener('DOMContentLoaded',()=>{
                 prevEl: swiperElement.querySelector('.swiper-button-prev')
             },
 
-            autoplay: {
-                delay: 3000, // Delay between transitions in milliseconds
+            autoplay: autoplay && {
+                delay: autoplaySpeed, // Delay between transitions in milliseconds
                 disableOnInteraction: false, // Continue autoplay after user interactions
             },
             
